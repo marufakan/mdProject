@@ -23,6 +23,7 @@ function Detail() {
                         <th scope="col">id</th>
                         <th scope="col">Province</th>
                         <th scope="col">District</th>
+                        <th scope="col">PL</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,6 +33,7 @@ function Detail() {
                                 <th scope="row"> {item.id} </th>
                                 <td> {item.province} </td>
                                 <td> {item.district} </td>
+                                <td> {item.pl} </td>
                             </tr>
                         )
                     }

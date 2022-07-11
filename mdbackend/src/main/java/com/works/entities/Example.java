@@ -20,6 +20,7 @@ public class Example {
     private String province;
     @NotBlank(message = "Empty Error")
     private String district;
+    private String pl;
 
 
 }

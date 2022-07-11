@@ -8,17 +8,17 @@ function Register() {
     const navigate = useNavigate()
     const [province, setProvince] = useState('')
     const [district, setDistrict] = useState('')
+    const [pl, setPl] = useState('')
 
     const fncSend = (evt: React.FormEvent) => {
         evt.preventDefault()
-        save(province, district).then(res => {
+        save(province, district,pl).then(res => {
             if(res.status){
                 alert("Registration is successful\n ")
                 navigate('/detail')
             }
-            else
-                alert("registration could not be made")
-        })
+        }).catch(err => alert("registration could not be made"));
+
     }
 
     return (
@@ -35,6 +35,10 @@ function Register() {
                         <div className="mb-3">
                             <label htmlFor="district" className="form-label">District</label>
                             <input onChange={(evt) => setDistrict(evt.target.value)} type="content" className="form-control" id="district" />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="pl" className="form-label">pl</label>
+                            <input onChange={(evt) => setPl(evt.target.value)} type="content" className="form-control" id="pl" />
                         </div>
                         <button type="submit" className="btn btn-primary">Submit</button>
                     </form>
